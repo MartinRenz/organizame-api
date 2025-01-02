@@ -5,7 +5,6 @@ from .serializers import TaskSerializer
 
 # View para listar e criar tarefas.
 class TaskListCreateView(generics.ListCreateAPIView):
-    queryset = Task.objects.all()
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticated]
     
@@ -17,7 +16,6 @@ class TaskListCreateView(generics.ListCreateAPIView):
 
 # View para editar, excluir e obter uma tarefa específica.
 class TaskRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Task.objects.all()
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticated]
 

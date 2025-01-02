@@ -12,23 +12,23 @@ User = get_user_model()
 class UserRegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [AllowAny]  # Permitir acesso público
+    permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
-        # Criação do usuário
+        # Criação do usuário.
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
 
-        # Geração do token para o usuário
+        # Geração do token para o usuário.
         refresh = RefreshToken.for_user(user)
         access_token = str(refresh.access_token)
 
         return Response(
             {
-                "message": "Usuário criado com sucesso.",
-                "access_token": access_token,  # Token de acesso
-                "refresh_token": str(refresh),  # Token de refresh
+                "message": "User created successfully.",
+                "access_token": access_token,
+                "refresh_token": str(refresh),
             },
             status=status.HTTP_201_CREATED
         )

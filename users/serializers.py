@@ -4,6 +4,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 User = get_user_model()
 
+# Serializer para o modelo de usuário.
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -12,6 +13,7 @@ class UserSerializer(serializers.ModelSerializer):
             'password': {'write_only': True, 'min_length': 8},
         }
 
+    # Método para criação do usuário.
     def create(self, validated_data):
         user = User.objects.create_user(
             username=validated_data['username'],
@@ -20,6 +22,7 @@ class UserSerializer(serializers.ModelSerializer):
         )
         return user
 
+# Serializer para gerar o token de autenticação.
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):

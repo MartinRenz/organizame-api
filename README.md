@@ -18,7 +18,8 @@ O OrganizaMeAPI é o back-end da plataforma OrganizaMe, uma aplicação de geren
 
 Certifique-se de ter instalado:  
 - [Python 3.8+](https://www.python.org/downloads/)  
-- [Git](https://git-scm.com/)  
+- [Git](https://git-scm.com/)
+- [Docker](https://www.docker.com) (Opcional, para rodar a aplicação em um container)
 
 ### 1️ - Clonagem do Repositório  
 
@@ -26,6 +27,15 @@ Certifique-se de ter instalado:
 git clone https://github.com/MartinRenz/organizame-api.git
 cd organizame-api
 ```
+
+### 🐳 Executar o projeto em um container com Docker:
+### 2 - Buildar e Subir o Container
+```bash
+docker-compose up --build
+```
+Caso preferir por essa opção, os passos a seguir podem ser ignorados.
+
+### 💻 Executar o projeto localmente sem Docker:
 
 ### 2 - Criação e Ativação do Ambiente Virtual  
 

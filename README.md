@@ -23,8 +23,8 @@ Certifique-se de ter instalado:
 ### 1️ - Clonagem do Repositório  
 
 ```bash
-git clone https://github.com/seu-usuario/OrganizaMeAPI.git
-cd OrganizaMeAPI
+git clone https://github.com/MartinRenz/organizame-api.git
+cd organizame-api
 ```
 
 ### 2 - Criação e Ativação do Ambiente Virtual  
